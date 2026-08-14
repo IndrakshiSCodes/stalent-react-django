@@ -1,0 +1,50 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyc
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Django
+db.sqlite3
+*.sqlite3
+*.sqlite
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Django static/media generated files
+staticfiles/
+media/
+
+# =========================
+# React / Vite
+# =========================
+node_modules/
+dist/
+.vite/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# IDE / Editors
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db

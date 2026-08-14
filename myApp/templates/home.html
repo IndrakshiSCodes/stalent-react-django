@@ -1,0 +1,282 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stalent - Where startups find student talent</title>
+    <meta name="description"
+        content="Stalent bridges the gap between ambitious startups and high-potential students. Real projects. Real mentorship. Real careers — built together.">
+    <!-- Google Fonts: Outfit for Headings, Inter for Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'myApp/css/style.css' %}">
+</head>
+
+<body>
+    <!-- Grid and Glowing Background decoration -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo-group" id="logo-link">
+                <!-- Inline SVG Logo Icon -->
+                <svg class="logo-icon-svg" viewBox="0 0 100 100" width="36" height="36" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#6366f1" />
+                            <stop offset="100%" stop-color="#4f46e5" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100" height="100" rx="28" fill="url(#logoGrad)" />
+                    <!-- Connected Nodes Pattern -->
+                    <circle cx="30" cy="70" r="7" fill="none" stroke="white" stroke-width="7" />
+                    <path d="M 30,70 C 40,55 45,35 55,45 C 65,55 55,65 70,30" fill="none" stroke="white"
+                        stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="70" cy="30" r="7" fill="none" stroke="white" stroke-width="7" />
+                </svg>
+                <span class="logo-text">Stalent</span>
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#" id="link-works">How it works</a>
+                <a href="#" id="link-startups">For Startups</a>
+                <a href="#" id="link-students">For Students</a>
+                <a href="#" id="link-stories">Success Stories</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="{% url 'student_home' %}" class="btn-login" id="btn-login">Log in</a>
+                <a href="#" class="btn-signup" id="btn-signup">Sign up free</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Hero Section -->
+    <main class="hero-section">
+        <div class="hero-container">
+            <!-- Large Floating central Stalent Logo Icon -->
+            <div class="hero-logo-wrapper">
+                <svg class="hero-logo-svg" viewBox="0 0 100 100" width="110" height="110" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="heroLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#6366f1" />
+                            <stop offset="100%" stop-color="#4f46e5" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100" height="100" rx="30" fill="url(#heroLogoGrad)" />
+                    <!-- Connected Nodes Pattern -->
+                    <circle cx="30" cy="70" r="7" fill="none" stroke="white" stroke-width="7" />
+                    <path d="M 30,70 C 40,55 45,35 55,45 C 65,55 55,65 70,30" fill="none" stroke="white"
+                        stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="70" cy="30" r="7" fill="none" stroke="white" stroke-width="7" />
+                </svg>
+            </div>
+
+            <!-- Hero Headline -->
+            <h1 class="hero-title">Where startups find <span class="purple-highlight">student talent.</span></h1>
+
+            <!-- Hero Subtitle -->
+            <p class="hero-subtitle">
+                Stalent bridges the gap between ambitious startups and high-potential students. Real projects. Real
+                mentorship. Real careers — built together.
+            </p>
+
+            <!-- Hero Action Buttons -->
+            <div class="hero-actions">
+                <!-- Startup Button (Purple) -->
+                <a href="#" class="btn-hero btn-hero-startup" id="btn-hero-startup">
+                    <svg class="btn-svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <!-- Rocket SVG Icon -->
+                        <path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5s3 1.5 6 1.5c2.31 0 4.24-1 5.5-2.5" />
+                        <path d="m19 5-9 9" />
+                        <path d="M9 12c.5-1.5 1.5-2.5 3-3" />
+                        <path d="M12 9c3.5-3.5 6-6 10-7-1 4-3.5 6.5-7 10" />
+                        <path d="M14 15c-1.5.5-2.5 1.5-3 3" />
+                    </svg>
+                    <span>I'm a Startup</span>
+                    <span class="btn-arrow">&rarr;</span>
+                </a>
+
+                <!-- Student Button (Green border, white background) -->
+                <a href="{% url 'student_home' %}" class="btn-hero btn-hero-student" id="btn-hero-student">
+                    <svg class="btn-svg-icon" viewBox="0 0 24 24" width="20" height="20" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <!-- Graduation Cap SVG Icon -->
+                        <path
+                            d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                        <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+                    </svg>
+                    <span>I'm a Student</span>
+                    <span class="btn-arrow">&rarr;</span>
+                </a>
+            </div>
+
+            <!-- Trust / Footer indicators -->
+
+        </div>
+    </main>
+
+
+
+    <!-- Platform Stats Section -->
+    <section class="stats-section" id="stats-banner">
+        <div class="stats-container">
+            <div class="stats-grid">
+
+                <!-- Stat 1: Startups Onboarded -->
+                <div class="platform-stat-card">
+                    <div class="stat-icon-wrapper bg-soft-blue">
+                        <svg class="stat-icon icon-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5s3 1.5 6 1.5c2.31 0 4.24-1 5.5-2.5" />
+                            <path d="m19 5-9 9" />
+                            <path d="M9 12c.5-1.5 1.5-2.5 3-3" />
+                            <path d="M12 9c3.5-3.5 6-6 10-7-1 4-3.5 6.5-7 10" />
+                            <path d="M14 15c-1.5.5-2.5 1.5-3 3" />
+                        </svg>
+                    </div>
+                    <div class="stat-text-group">
+                        <span class="platform-stat-value">1,800+</span>
+                        <span class="platform-stat-label">Startups onboarded</span>
+                    </div>
+                </div>
+
+                <!-- Stat 2: Student Members -->
+                <div class="platform-stat-card">
+                    <div class="stat-icon-wrapper bg-soft-green">
+                        <svg class="stat-icon icon-green" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+                        </svg>
+                    </div>
+                    <div class="stat-text-group">
+                        <span class="platform-stat-value">24,000+</span>
+                        <span class="platform-stat-label">Student members</span>
+                    </div>
+                </div>
+
+                <!-- Stat 3: Projects Completed -->
+                <div class="platform-stat-card">
+                    <div class="stat-icon-wrapper bg-soft-orange">
+                        <svg class="stat-icon icon-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <path d="m9 11 2 2 4-4" />
+                        </svg>
+                    </div>
+                    <div class="stat-text-group">
+                        <span class="platform-stat-value">9,400+</span>
+                        <span class="platform-stat-label">Projects completed</span>
+                    </div>
+                </div>
+
+                <!-- Stat 4: Avg Satisfaction -->
+                <div class="platform-stat-card">
+                    <div class="stat-icon-wrapper bg-soft-pink">
+                        <svg class="stat-icon icon-pink" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                    </div>
+                    <div class="stat-text-group">
+                        <span class="platform-stat-value">4.8 / 5</span>
+                        <span class="platform-stat-label">Avg. satisfaction</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- How it Works Scroll Badge -->
+            <div class="how-it-works-badge-wrapper">
+                <span class="how-it-works-badge">HOW IT WORKS</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section" id="how-it-works">
+        <div class="hiw-container">
+            <!-- Section Badge -->
+            <span class="hiw-badge">HOW IT WORKS</span>
+
+            <!-- Section Heading -->
+            <h2 class="hiw-heading">Simple for both sides.</h2>
+
+            <!-- Tab Toggle -->
+            <div class="hiw-tabs">
+                <button class="hiw-tab active" id="tab-startups">
+                    <svg class="hiw-tab-icon" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5s3 1.5 6 1.5c2.31 0 4.24-1 5.5-2.5" />
+                        <path d="m19 5-9 9" />
+                        <path d="M9 12c.5-1.5 1.5-2.5 3-3" />
+                        <path d="M12 9c3.5-3.5 6-6 10-7-1 4-3.5 6.5-7 10" />
+                        <path d="M14 15c-1.5.5-2.5 1.5-3 3" />
+                    </svg>
+                    For Startups
+                </button>
+                <button class="hiw-tab" id="tab-students">
+                    <svg class="hiw-tab-icon" viewBox="0 0 24 24" width="16" height="16" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                        <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+                    </svg>
+                    For Students
+                </button>
+            </div>
+
+            <!-- Steps Grid -->
+            <div class="hiw-steps">
+                <!-- Step 1 -->
+                <div class="hiw-step">
+                    <div class="step-number">01</div>
+                    <h3 class="step-title">Post your project</h3>
+                    <p class="step-desc">Describe what you need — a React dev for 3 months, a UX researcher for a
+                        sprint, or a marketing intern.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="hiw-step">
+                    <div class="step-number">02</div>
+                    <h3 class="step-title">Get matched instantly</h3>
+                    <p class="step-desc">Stalent surfaces top student profiles that fit your stack, timeline, and budget
+                        within 24 hours.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="hiw-step">
+                    <div class="step-number">03</div>
+                    <h3 class="step-title">Collaborate &amp; hire</h3>
+                    <p class="step-desc">Work together through our platform. Love the result? Convert to a full offer
+                        directly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating support/help button -->
+    <button class="btn-
+    help" id="btn-help" aria-label="Get Help">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+        </svg>
+    </button>
+</body>
+
+</html>
